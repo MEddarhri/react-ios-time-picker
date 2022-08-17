@@ -1,1 +1,3 @@
-// import {TimePicker} from './components/TimePicker.js';
+import TimePicker from './components/TimePicker';
+
+export { TimePicker };
