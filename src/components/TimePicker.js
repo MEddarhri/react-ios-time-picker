@@ -17,7 +17,7 @@ function TimePicker({
    isOpen: initialIsOpenValue = false,
    required = false,
    cancelButtonText = 'Cancel',
-   saveButtonText = 'Savee',
+   saveButtonText = 'Save',
    controllers = true,
    seperator = true,
    id = null,
