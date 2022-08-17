@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import React, { useEffect, useState } from 'react';
 import { Portal } from 'react-portal';
 import TimePickerSelection from './TimePickerSelection';
