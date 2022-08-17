@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/npm/v/hidden-meddarhri-test)](https://www.npmjs.com/package/hidden-meddarhri-test) ![downloads](https://img.shields.io/npm/dt/hidden-meddarhri-test?color=blue&logo=npm&logoColor=blue)
+[![npm](https://img.shields.io/npm/v/react-ios-time-picker)](https://www.npmjs.com/package/react-ios-time-picker) ![downloads](https://img.shields.io/npm/dt/react-ios-time-picker?color=blue&logo=npm&logoColor=blue)
 
 # React ios time picker
 
