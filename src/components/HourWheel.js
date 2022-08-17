@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { initialNumbersValue, returnSelectedValue } from './helpers';
+import { initialNumbersValue, returnSelectedValue } from '../helpers';
 import PickerEffects from './PickerEffects';
 
 function HourWheel({ height, value, setValue }) {

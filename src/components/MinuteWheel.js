@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { initialNumbersValue, returnSelectedValue } from './helpers';
+import { initialNumbersValue, returnSelectedValue } from '../helpers';
 
 function MinuteWheel({ height, value, setValue }) {
    const [hours, setHours] = useState(initialNumbersValue(height, 60, parseInt(value.slice(3, 6))));
