@@ -2,11 +2,8 @@
 
 # React ios time picker
 
-![Screenshot](image.png)
-
 A modern time picker for your next React app.
 
--  Supports virtually any language
 -  No moment.js needed
 -  Zero dependencies and lightweight
 
@@ -17,6 +14,10 @@ npm install react-ios-time-picker
 ```
 
 ## Usage
+
+### 24 hours format
+
+![Screenshot](24Hours.png)
 
 ```js
 import React, { useState } from 'react';
@@ -32,6 +33,29 @@ export default const  MyApp = () => {
    return (
       <div>
          <TimePicker onChange={onChange} value={value} />
+      </div>
+   );
+}
+```
+
+### 12 hours format
+
+![Screenshot](12Hours.png)
+
+```js
+import React, { useState } from 'react';
+import { TimePicker } from 'react-ios-time-picker';
+
+export default const  MyApp = () => {
+   const [value, setValue] = useState('10:00 AM');
+
+   const onChange = (timeValue) => {
+      setValue(timeValue);
+   }
+
+   return (
+      <div>
+         <TimePicker onChange={onChange} value={value} use12Hours/>
       </div>
    );
 }
@@ -53,9 +77,15 @@ export default const  MyApp = () => {
 | controllers        | Boolean                                       | `true`         | Whether the buttons should be displayed                         |
 | seperator          | Boolean                                       | `true`         | whether show the colon seperator                                |
 | id                 | String                                        | n/a            | Input time picker id                                            |
+| name               | String                                        | n/a            | Input time picker name                                          |
+| use12Hours         | Boolean                                       | false          | 12 hours display mode                                           |
+| inputClassName     | String                                        | n/a            | Input time picker className                                     |
+| popupClassName     | String                                        | n/a            | time picker popup className                                     |
 | onChange           | `(value) => alert ('New time is: ', value)`   | n/a            | Called when select a different value                            |
 | onSave             | `(value) => alert ('Time saved is: ', value)` | n/a            | When the user clicks on save button                             |
 | onClose            | `() => alert('Clock closed')`                 | n/a            | When the user clicks on cancel button                           |
+| onAmPmChange       | `() => alert('Am/Pm changed')`                | n/a            | called when select an am/pm value                               |
+| onOpen             | `() => alert('time picker opened')`           | n/a            | called when time picker is opened                               |
 
 ## Contributions Welcome!
 

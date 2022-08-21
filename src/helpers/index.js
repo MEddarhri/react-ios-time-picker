@@ -1,5 +1,5 @@
 export const initialNumbersValue = (heightValue = 54, numbersLength = 24, value = null) => {
-   const arrayOfSelectedValue = [
+   const initialValue24hourFormat = [
       {
          number: '00',
          translatedValue: (heightValue * 2).toString(),
@@ -11,10 +11,26 @@ export const initialNumbersValue = (heightValue = 54, numbersLength = 24, value 
          selected: false,
       },
    ];
+
+   const initialValue12hourFormat = [
+      {
+         number: '00',
+         translatedValue: heightValue.toString(),
+         selected: false,
+         hidden: true,
+      },
+      {
+         number: '01',
+         translatedValue: heightValue.toString(),
+         selected: false,
+      },
+   ];
+   const arrayOfSelectedValue =
+      numbersLength === 13 ? initialValue12hourFormat : initialValue24hourFormat;
    let count = 0;
    for (let index = 0; index < 3; index++) {
       for (let j = 0; j < numbersLength; j++) {
-         if (index === 0 && j < 2) {
+         if ((index === 0 && j < 2) || (numbersLength === 13 && j === 0)) {
             continue;
          }
          if (index === 1 && j === value) {
@@ -71,7 +87,7 @@ export const returnSelectedValue = (heightValue = 54, numbersLength = 24) => {
    let count = 0;
    for (let index = 0; index < 3; index++) {
       for (let j = 0; j < numbersLength; j++) {
-         if (index === 0 && j < 2) {
+         if ((index === 0 && j < 2) || (numbersLength === 13 && j === 0)) {
             continue;
          }
          if (j.toString().length === 1) {

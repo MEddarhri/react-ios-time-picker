@@ -27,3 +27,7 @@ dist
 
 # Output of 'npm pack'
 *.tgz
+
+# Local Netlify folder
+.netlify
+example

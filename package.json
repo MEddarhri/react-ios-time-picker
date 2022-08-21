@@ -1,6 +1,6 @@
 {
    "name": "react-ios-time-picker",
-   "version": "0.1.1",
+   "version": "0.2.0",
    "description": "A modern time picker for your React app.",
    "main": "dist/TimePicker.js",
    "module": "dist/TimePicker.js",
@@ -67,11 +67,14 @@
       "webpack-cli": "^4.10.0"
    },
    "keywords": [
-      "react",
-      "time",
+      "react-time-picker",
       "time-picker",
       "ios-time-picker",
-      "time-picker-react-ios"
+      "time-picker-react-ios",
+      "wheel-time-picker",
+      "react-ios-time-picker",
+      "wheel-picker",
+      "select-time"
    ],
    "author": {
       "name": "MEddarhri",

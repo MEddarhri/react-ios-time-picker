@@ -5,7 +5,7 @@ import '../styles/react-ios-time-picker.css';
 
 function TimePicker({
    value: initialValue = null,
-   cellHeight = 35,
+   cellHeight = 28,
    placeHolder = 'Select Time',
    pickerDefaultValue = '00:00',
    onChange = () => {},
@@ -20,18 +20,16 @@ function TimePicker({
    controllers = true,
    seperator = true,
    id = null,
+   use12Hours = false,
+   onAmPmChange = () => {},
+   name = null,
+   onOpen = () => {},
+   popupClassName = null,
+   inputClassName = null,
 }) {
    const [isOpen, setIsOpen] = useState(initialIsOpenValue);
    const [height, setHeight] = useState(cellHeight);
-   const [value, setValue] = useState(initialValue === null ? pickerDefaultValue : initialValue);
    const [inputValue, setInputValue] = useState(initialValue);
-
-   useEffect(() => {
-      if (controllers === false) {
-         setInputValue(value);
-         onChange(value);
-      }
-   }, [value]);
 
    const handleClick = () => {
       setIsOpen(!isOpen);
@@ -39,13 +37,12 @@ function TimePicker({
 
    const handleFocus = () => {
       onFocus();
+      onOpen();
    };
 
    const params = {
       onChange,
       height,
-      value,
-      setValue,
       onSave,
       onCancel,
       cancelButtonText,
@@ -54,6 +51,10 @@ function TimePicker({
       setInputValue,
       setIsOpen,
       seperator,
+      use12Hours,
+      onAmPmChange,
+      initialValue,
+      pickerDefaultValue,
    };
 
    return (
@@ -61,7 +62,8 @@ function TimePicker({
          <div className="react-ios-time-picker-main" onClick={handleClick}>
             <input
                id={id}
-               className="react-ios-time-picker-input"
+               name={name}
+               className={`react-ios-time-picker-input ${inputClassName || ''}`}
                value={inputValue === null ? '' : inputValue}
                type="text"
                placeholder={placeHolder}
@@ -75,7 +77,7 @@ function TimePicker({
             <Portal>
                <div className="react-ios-time-picker-popup">
                   <div
-                     className="react-ios-time-picker-popup-overlay"
+                     className={`react-ios-time-picker-popup-overlay ${popupClassName || ''}`}
                      onClick={() => setIsOpen(!isOpen)}
                   />
                   <TimePickerSelection {...params} />

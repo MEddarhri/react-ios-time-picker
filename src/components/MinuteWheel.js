@@ -114,24 +114,16 @@ function MinuteWheel({ height, value, setValue }) {
                currentValue = currentTranslatedValue + (120 / (dragEndTime - dragStartTime)) * 100;
             }
             let finalValue = Math.round(currentValue / height) * height;
-            if (finalValue < height * -177) {
-               finalValue = height * -177;
-            }
-            if (finalValue > height * 2) {
-               finalValue = height * 2;
-            }
+            if (finalValue < height * -177) finalValue = height * -177;
+            if (finalValue > height * 2) finalValue = height * 2;
+
             mainListRef.current.style.transform = `translateY(${finalValue}px)`;
             setCurrentTranslatedValue(finalValue);
          }
          if (dragEndTime - dragStartTime > 100 && cursorPosition !== 0) {
             let finalValue = Math.round(currentTranslatedValue / height) * height;
-            if (finalValue < height * -177) {
-               finalValue = height * -177;
-            }
-            if (finalValue > height * 2) {
-               finalValue = height * 2;
-            }
-
+            if (finalValue < height * -177) finalValue = height * -177;
+            if (finalValue > height * 2) finalValue = height * 2;
             mainListRef.current.style.transform = `translateY(${finalValue}px)`;
             setCurrentTranslatedValue(finalValue);
          }
@@ -140,7 +132,7 @@ function MinuteWheel({ height, value, setValue }) {
    }, [showFinalTranslate]);
 
    // return to default position after drag end (handleTransitionEnd)
-   const handleTransitionEnd = () => {
+   const handleTransitionEnd = (e) => {
       returnSelectedValue(height, 60).map((item) => {
          if (parseInt(item.translatedValue) === currentTranslatedValue) {
             setSelectedNumber(item.arrayNumber);
