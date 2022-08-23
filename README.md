@@ -2,6 +2,8 @@
 
 # React ios time picker
 
+![React-ios-time-picker demo](https://res.cloudinary.com/emdpro/image/upload/v1661245249/demo_bcmzme.gif)
+
 A modern time picker for your next React app.
 
 -  No moment.js needed
@@ -17,7 +19,7 @@ npm install react-ios-time-picker
 
 ### 24 hours format
 
-![Screenshot](24Hours.png)
+![24 hours format](https://res.cloudinary.com/emdpro/image/upload/v1661245289/24Hours_xbooc1.png)
 
 ```js
 import React, { useState } from 'react';
@@ -40,7 +42,7 @@ export default const  MyApp = () => {
 
 ### 12 hours format
 
-![Screenshot](12Hours.png)
+![12 hours format](https://res.cloudinary.com/emdpro/image/upload/v1661245282/12Hours_tqf8gc.png)
 
 ```js
 import React, { useState } from 'react';
