@@ -209,11 +209,13 @@ input:focus {
    color: #f7f7f7;
 }
 
-.react-ios-time-picker-btn-cointainer {
+.react-ios-time-picker-btn-container {
+   position: relative;
    display: flex;
    justify-content: space-between;
    background-color: #292929;
    border-bottom: 1px solid #333;
+   z-index: 100;
 }
 
 .react-ios-time-picker-btn {

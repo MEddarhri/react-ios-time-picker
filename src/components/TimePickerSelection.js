@@ -68,7 +68,7 @@ function TimePickerSelection({
    return (
       <div className="react-ios-time-picker  react-ios-time-picker-transition">
          {controllers && (
-            <div className="react-ios-time-picker-btn-cointainer">
+            <div className="react-ios-time-picker-btn-container">
                <button
                   className="react-ios-time-picker-btn react-ios-time-picker-btn-cancel"
                   onClick={handleCancel}
