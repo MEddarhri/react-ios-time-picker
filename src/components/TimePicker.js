@@ -7,7 +7,7 @@ function TimePicker({
    value: initialValue = null,
    cellHeight = 28,
    placeHolder = 'Select Time',
-   pickerDefaultValue = '00:00',
+   pickerDefaultValue = '10:00',
    onChange = () => {},
    onFocus = () => {},
    onSave = () => {},
@@ -40,6 +40,14 @@ function TimePicker({
       onOpen();
    };
 
+   let finalValue = inputValue;
+
+   if (initialValue === null && use12Hours) {
+      finalValue = `${pickerDefaultValue} AM`;
+   } else if (initialValue === null && !use12Hours) {
+      finalValue = pickerDefaultValue;
+   }
+
    const params = {
       onChange,
       height,
@@ -53,7 +61,7 @@ function TimePicker({
       seperator,
       use12Hours,
       onAmPmChange,
-      initialValue,
+      initialValue: finalValue,
       pickerDefaultValue,
    };
 
