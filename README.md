@@ -86,7 +86,7 @@ export default const  MyApp = () => {
 | onChange           | `(value) => alert ('New time is: ', value)`   | n/a            | Called when select a different value                            |
 | onSave             | `(value) => alert ('Time saved is: ', value)` | n/a            | When the user clicks on save button                             |
 | onClose            | `() => alert('Clock closed')`                 | n/a            | When the user clicks on cancel button                           |
-| onAmPmChange       | `() => alert('Am/Pm changed')`                | n/a            | called when select an am/pm value                               |
+| onAmPmChange       | `(value) => alert('Am/Pm changed : value')`   | n/a            | called when select an am/pm value                               |
 | onOpen             | `() => alert('time picker opened')`           | n/a            | called when time picker is opened                               |
 
 ## Contributions Welcome!
